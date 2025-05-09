@@ -33,9 +33,7 @@ public class MyFirstwebsiteExample {
 		alertaccept.accept();
 	}
 
-	private static void sendKeys(String string) {
+	//private static void sendKeys(String string) {
 		// TODO Auto-generated method stub
 		
 	}
-
-}
