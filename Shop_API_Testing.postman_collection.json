@@ -56,12 +56,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/Shop",
+							"raw": "https://shop2-wqp4.onrender.com/shop",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"shop2-wqp4",
+								"onrender",
+								"com"
 							],
 							"path": [
-								"Shop"
+								"shop"
 							]
 						}
 					},
@@ -92,8 +95,11 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -104,12 +110,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/Shop/{{createdItemId}}",
+							"raw": "https://shop2-wqp4.onrender.com/shop/{{createdItemId}}",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"shop2-wqp4",
+								"onrender",
+								"com"
 							],
 							"path": [
-								"Shop",
+								"shop",
 								"{{createdItemId}}"
 							]
 						}
@@ -138,8 +147,11 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -147,12 +159,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/Shop/{{createdItemId}}",
+							"raw": "https://shop2-wqp4.onrender.com/shop/{{createdItemId}}",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"shop2-wqp4",
+								"onrender",
+								"com"
 							],
 							"path": [
-								"Shop",
+								"shop",
 								"{{createdItemId}}"
 							],
 							"query": [
@@ -215,12 +230,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Shop",
+					"raw": "https://shop2-wqp4.onrender.com/shop",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
-						"Shop"
+						"shop"
 					]
 				}
 			},
@@ -281,9 +299,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/shop",
+					"raw": "https://shop2-wqp4.onrender.com/shop",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
 						"shop"
@@ -338,12 +359,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Shop/{{itemID}}",
+					"raw": "https://shop2-wqp4.onrender.com/shop/{{itemID}}",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
-						"Shop",
+						"shop",
 						"{{itemID}}"
 					]
 				}
@@ -397,12 +421,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Shop/{{itemID}}",
+					"raw": "https://shop2-wqp4.onrender.com/shop/{{itemID}}",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
-						"Shop",
+						"shop",
 						"{{itemID}}"
 					]
 				}
@@ -444,13 +471,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/Shop/",
+					"raw": "https://shop2-wqp4.onrender.com/shop",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
-						"Shop",
-						""
+						"shop"
 					]
 				}
 			},
@@ -488,8 +517,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"packages": {},
-						"type": "text/javascript"
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -500,12 +532,15 @@
 				"method": "OPTIONS",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Shop",
+					"raw": "https://shop2-wqp4.onrender.com/shop",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"shop2-wqp4",
+						"onrender",
+						"com"
 					],
 					"path": [
-						"Shop"
+						"shop"
 					]
 				}
 			},
