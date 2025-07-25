@@ -2,43 +2,9 @@
   "Shop": [
     {
       "0": {
-        "product": "New",
-        "price": "100"
+        "product": "Default",
+        "price": "001"
       },
       "id": "e70a"
-    },
-    {
-      "product": "111",
-      "price": 111,
-      "id": "8b02",
-      "Available": "Yes"
-    },
-    {
-      "product": "111",
-      "price": 111,
-      "id": "02ae",
-      "Available": "Yes"
-    },
-    {
-      "0": {
-        "product": "123-updated",
-        "price": "123"
-      },
-      "1": {
-        "product": "12-updated",
-        "price": "12"
-      },
-      "2": {
-        "product": "1",
-        "price": "1"
-      },
-      "id": "c742"
-    },
-    {
-      "product": "111",
-      "price": 111,
-      "id": "2a9e",
-      "Available": "Yes"
-    }
-  ]
+    }  ]
 }
