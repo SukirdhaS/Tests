@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Shop_API_Testing" tests="9" time="2.204">
+  <testsuite name="TC_05: To validate the Delete functionaity / TC_05.1_Create a resource and save the created id in variable" id="88172c22-55a6-4c60-b7c7-57d20ab068ad" timestamp="2025-07-25T16:04:55.010Z" tests="2" failures="0" errors="0" time="0.373">
+    <testcase name="Status code is 201" time="0.373" classname="Tc05ToValidateTheDeleteFunctionaityTc051CreateAResourceAndSaveTheCreatedIdInVariable"/>
+    <testcase name="Resource is created" time="0.373" classname="Tc05ToValidateTheDeleteFunctionaityTc051CreateAResourceAndSaveTheCreatedIdInVariable"/>
+  </testsuite>
+  <testsuite name="TC_05: To validate the Delete functionaity / TC_05.2_Delete" id="1af60175-96d7-4b23-b747-abe7ffd8e837" timestamp="2025-07-25T16:04:55.010Z" tests="1" failures="0" errors="0" time="0.199">
+    <testcase name="Response does NOT contain 'Delete functionality'" time="0.199" classname="Tc05ToValidateTheDeleteFunctionaityTc052Delete"/>
+  </testsuite>
+  <testsuite name="TC_05: To validate the Delete functionaity / TC_05.3_Verify the deleted resource" id="df720b28-8ce9-420b-9a4e-0954fbbecf3c" timestamp="2025-07-25T16:04:55.010Z" tests="1" failures="0" errors="0" time="0.197">
+    <testcase name="Status code is 404, confirms the deletion" time="0.197" classname="Tc05ToValidateTheDeleteFunctionaityTc053VerifyTheDeletedResource"/>
+  </testsuite>
+  <testsuite name="TC_01: To get a resource" id="221cbb68-2c95-400f-a1ff-60c340c5db57" timestamp="2025-07-25T16:04:55.010Z" tests="2" failures="0" errors="0" time="0.195">
+    <testcase name="Status code is 200" time="0.195" classname="Tc01ToGetAResource"/>
+    <testcase name="Body contains 'product'" time="0.195" classname="Tc01ToGetAResource"/>
+  </testsuite>
+  <testsuite name="TC_02:To create a new resource" id="69029ceb-4936-4616-8469-601e9456f089" timestamp="2025-07-25T16:04:55.010Z" tests="2" failures="0" errors="0" time="0.442">
+    <testcase name="Status code is 201" time="0.442" classname="Tc02ToCreateANewResource"/>
+    <testcase name="Body matches string" time="0.442" classname="Tc02ToCreateANewResource"/>
+  </testsuite>
+  <testsuite name="TC_03: To update a resource - put" id="0a080f15-4f6d-4658-812b-8aeb8a5439d4" timestamp="2025-07-25T16:04:55.010Z" tests="2" failures="0" errors="0" time="0.201">
+    <testcase name="Status code is 200" time="0.201" classname="Tc03ToUpdateAResourcePut"/>
+    <testcase name="Body is updated" time="0.201" classname="Tc03ToUpdateAResourcePut"/>
+  </testsuite>
+  <testsuite name="TC_04: To update a part of an existing resource- patch" id="b80ed0ed-61a5-4e29-a076-bfcc9745eb63" timestamp="2025-07-25T16:04:55.010Z" tests="2" failures="0" errors="0" time="0.207">
+    <testcase name="Status code is 200" time="0.207" classname="Tc04ToUpdateAPartOfAnExistingResourcePatch"/>
+    <testcase name="Body contains 'Availability'" time="0.207" classname="Tc04ToUpdateAPartOfAnExistingResourcePatch"/>
+  </testsuite>
+  <testsuite name="TC_06: To verify if a resource file exists before downloading it" id="353eca3c-7eed-4c74-ae58-a1721c253ddc" timestamp="2025-07-25T16:04:55.010Z" tests="1" failures="0" errors="0" time="0.203">
+    <testcase name="Status code is 200" time="0.203" classname="Tc06ToVerifyIfAResourceFileExistsBeforeDownloadingIt"/>
+  </testsuite>
+  <testsuite name="TC_07: To check allowed actions on a resource" id="08dcf268-a2cb-4965-b2aa-02606641f178" timestamp="2025-07-25T16:04:55.010Z" tests="3" failures="0" errors="0" time="0.187">
+    <testcase name="Status code is 204 as expected for deleted item" time="0.187" classname="Tc07ToCheckAllowedActionsOnAResource"/>
+    <testcase name="Access-Control-Allow-Methods header is present" time="0.187" classname="Tc07ToCheckAllowedActionsOnAResource"/>
+    <testcase name="Allowed Methods: GET,HEAD,PUT,PATCH,POST,DELETE" time="0.187" classname="Tc07ToCheckAllowedActionsOnAResource"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,343 @@
+{
+	"id": "1b102dba-967d-415f-82fb-fbc0d13648b1",
+	"name": "Shop_API_Testing",
+	"timestamp": "2025-07-25T13:58:40.456Z",
+	"collection_id": "8511641-af79d766-c857-4d61-815d-96f98927beb1",
+	"folder_id": 0,
+	"environment_id": "8511641-9691be1e-ab92-4841-af22-6c0f8b1c4600",
+	"totalPass": 16,
+	"delay": 0,
+	"persist": false,
+	"status": "finished",
+	"startedAt": "2025-07-25T13:58:38.133Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b48c273d-9485-4537-a216-00ed180a7d38",
+			"name": "TC_05.1_Create a resource and save the created id in variable",
+			"url": "https://shop2-wqp4.onrender.com/shop",
+			"time": 273,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Resource is created": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Resource is created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				273
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Resource is created": true
+				}
+			]
+		},
+		{
+			"id": "17b581df-fa01-4b77-b35a-605953dda859",
+			"name": "TC_05.2_Delete",
+			"url": "https://shop2-wqp4.onrender.com/shop/788ctZ3",
+			"time": 127,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response does NOT contain 'Delete functionality'": true
+			},
+			"testPassFailCounts": {
+				"Response does NOT contain 'Delete functionality'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				127
+			],
+			"allTests": [
+				{
+					"Response does NOT contain 'Delete functionality'": true
+				}
+			]
+		},
+		{
+			"id": "0abe513f-f315-4b49-be75-5f94265c3939",
+			"name": "TC_05.3_Verify the deleted resource",
+			"url": "https://shop2-wqp4.onrender.com/shop/788ctZ3",
+			"time": 122,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404, confirms the deletion": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404, confirms the deletion": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				122
+			],
+			"allTests": [
+				{
+					"Status code is 404, confirms the deletion": true
+				}
+			]
+		},
+		{
+			"id": "529be269-888f-438d-b581-0a323eb11db6",
+			"name": "TC_01: To get a resource",
+			"url": "https://shop2-wqp4.onrender.com/shop",
+			"time": 132,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contains 'product'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains 'product'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				132
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contains 'product'": true
+				}
+			]
+		},
+		{
+			"id": "ff8c4699-de86-411d-917b-fa4db39d6fe7",
+			"name": "TC_02:To create a new resource",
+			"url": "https://shop2-wqp4.onrender.com/shop",
+			"time": 121,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				121
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "2b16d948-0597-4fee-9741-99ddf2cc74b0",
+			"name": "TC_03: To update a resource - put",
+			"url": "https://shop2-wqp4.onrender.com/shop/gwkbaLX",
+			"time": 302,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body is updated": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				302
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body is updated": true
+				}
+			]
+		},
+		{
+			"id": "0f78cf7f-4455-44d0-bcc0-5e60e747313d",
+			"name": "TC_04: To update a part of an existing resource- patch",
+			"url": "https://shop2-wqp4.onrender.com/shop/gwkbaLX",
+			"time": 122,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contains 'Availability'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains 'Availability'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				122
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contains 'Availability'": true
+				}
+			]
+		},
+		{
+			"id": "d2db282f-70e2-4111-96fe-9f8cf4ef7cf1",
+			"name": "TC_06: To verify if a resource file exists before downloading it",
+			"url": "https://shop2-wqp4.onrender.com/shop",
+			"time": 131,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				131
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "ae059826-7626-42d9-870b-254b98591d4b",
+			"name": "TC_07: To check allowed actions on a resource",
+			"url": "https://shop2-wqp4.onrender.com/shop",
+			"time": 201,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204 as expected for deleted item": true,
+				"Access-Control-Allow-Methods header is present": true,
+				"Allowed Methods: GET,HEAD,PUT,PATCH,POST,DELETE": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204 as expected for deleted item": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Access-Control-Allow-Methods header is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Allowed Methods: GET,HEAD,PUT,PATCH,POST,DELETE": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status code is 204 as expected for deleted item": true,
+					"Access-Control-Allow-Methods header is present": true,
+					"Allowed Methods: GET,HEAD,PUT,PATCH,POST,DELETE": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1531,
+	"collection": {
+		"requests": [
+			{
+				"id": "b48c273d-9485-4537-a216-00ed180a7d38",
+				"method": "POST"
+			},
+			{
+				"id": "17b581df-fa01-4b77-b35a-605953dda859",
+				"method": "DELETE"
+			},
+			{
+				"id": "0abe513f-f315-4b49-be75-5f94265c3939",
+				"method": "GET"
+			},
+			{
+				"id": "529be269-888f-438d-b581-0a323eb11db6",
+				"method": "GET"
+			},
+			{
+				"id": "ff8c4699-de86-411d-917b-fa4db39d6fe7",
+				"method": "POST"
+			},
+			{
+				"id": "2b16d948-0597-4fee-9741-99ddf2cc74b0",
+				"method": "PUT"
+			},
+			{
+				"id": "0f78cf7f-4455-44d0-bcc0-5e60e747313d",
+				"method": "PATCH"
+			},
+			{
+				"id": "d2db282f-70e2-4111-96fe-9f8cf4ef7cf1",
+				"method": "HEAD"
+			},
+			{
+				"id": "ae059826-7626-42d9-870b-254b98591d4b",
+				"method": "OPTIONS"
+			}
+		]
+	}
+}
