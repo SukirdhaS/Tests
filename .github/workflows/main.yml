@@ -20,17 +20,17 @@ jobs:
         run: npm install -g newman
 
       - name: Create folder for report
-        run: mkdir newman1
+        run: mkdir newman
 
       - name: Run API Tests with Newman
-        run: |
-          newman run Shop_API_Testing.postman_collection.json \
-          -e QA.postman_environment.json \
-          -r cli,junit \
-          --reporter-junit-export=newman1/Shop_API_Testing-report.xml
+        run: >
+          newman run Shop_API_Testing.postman_collection.json 
+          -e QA.postman_environment.json 
+          -r cli,junit 
+          --reporter-junit-export=newman/Shop_API_Testing-report.xml
 
       - name: Upload JUnit report artifact
         uses: actions/upload-artifact@v4
         with:
           name: postman-junit-report
-          path: newman1/Shop_API_Testing-report.xml
+          path: newman/Shop_API_Testing-report.xml
