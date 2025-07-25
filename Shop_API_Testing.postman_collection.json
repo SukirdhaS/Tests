@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "af79d766-c857-4d61-815d-96f98927beb1",
+		"name": "Shop_API_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8511641"
+	},
+	"item": [
+		{
+			"name": "TC_05: To validate the Delete functionaity",
+			"item": [
+				{
+					"name": "TC_05.1_Create a resource and save the created id in variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Resource is created\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"TobeDeleted\");\r",
+									"\r",
+									"    const response = pm.response.json();\r",
+									"pm.collectionVariables.set(\"createdItemId\", response.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"product\": \"TobeDeleted\",\r\n\"price\": \"400\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_05.2_Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Deleting ID:\", pm.collectionVariables.get(\"createdItemId\"));\r",
+									"\r",
+									"pm.test(\"Response does NOT contain 'Delete functionality'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(\"Delete functionality\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Shop/{{createdItemId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Shop",
+								"{{createdItemId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TC_05.3_Verify the deleted resource",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404, confirms the deletion\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"let deletedId = pm.collectionVariables.get(\"createdItemId\");\r",
+									"console.log(\"Deleted item ID:\", deletedId);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Shop/{{createdItemId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Shop",
+								"{{createdItemId}}"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "A2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "To verify if a resource is deleted successfully\n\n1. Create a resource and the CreateditemID is stored\n    \n2. Delete the resources using CreateditemID\n    \n3. Get the resource data based on CreateditemID and the response should be 404"
+		},
+		{
+			"name": "TC_01: To get a resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains 'product'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"product\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Shop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Shop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_02:To create a new resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData;\r",
+							"\r",
+							"try {\r",
+							"    responseData = pm.response.json();\r",
+							"    pm.collectionVariables.set(\"itemID\", responseData.id);\r",
+							"} catch (e) {\r",
+							"    console.error(\"JSON parsing error:\", e);\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"     pm.expect(pm.response.text()).to.include(\"test\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"product\": \"test\",\r\n\"price\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/shop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"shop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_03: To update a resource - put",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"updated\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product\": \"111-updated\",\r\n  \"price\": 111\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Shop/{{itemID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Shop",
+						"{{itemID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_04: To update a part of an existing resource- patch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body contains 'Availability'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Yes\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"Available\": \"Yes\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Shop/{{itemID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Shop",
+						"{{itemID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_06: To verify if a resource file exists before downloading it",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "HEAD",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Shop/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Shop",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_07: To check allowed actions on a resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204 as expected for deleted item\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"let allowedMethods = pm.response.headers.get(\"Access-Control-Allow-Methods\");\r",
+							"\r",
+							"pm.test(\"Access-Control-Allow-Methods header is present\", function () {\r",
+							"    pm.expect(allowedMethods).to.not.be.null;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Allowed Methods: \" + allowedMethods, function () {\r",
+							"    // Dummy test to show the value in results\r",
+							"    pm.expect(true).to.be.true;\r",
+							"});\r",
+							"\r",
+							"console.log(\"Access-Control-Allow-Methods:\", allowedMethods);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Shop",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Shop"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "createdItemId",
+			"value": ""
+		},
+		{
+			"key": "itemID",
+			"value": ""
+		}
+	]
+}
