@@ -34,3 +34,10 @@ jobs:
         with:
           name: postman-junit-report
           path: newman/Shop_API_Testing-report.xml
+
+      - name: Upload Newman Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-report
+          path: newman/Shop_API_Testing-report.xml
+
