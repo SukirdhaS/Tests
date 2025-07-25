@@ -2,9 +2,9 @@
   "name": "shop-api",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {
-    "start": "json-server --watch shop.json --port 10000"
-  },
+ "scripts": {
+  "start": "json-server --host 0.0.0.0 --watch shop.json --port 10000"
+},
   "dependencies": {
     "json-server": "^0.17.3"
   },
