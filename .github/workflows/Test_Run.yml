@@ -25,12 +25,15 @@ jobs:
             New-Item -ItemType Directory -Path "postman-tests"
           }
 
+      - name: Install newman HTML reporting
+        run: npm install -g newman-reporter-html
+      
       - name: Run Newman Collection
         run: |
           newman run Shop_API_Testing.postman_collection.json `
             -e QA.postman_environment.json `
-            -r cli,junit `
-            --reporter-junit-export postman-tests/Testing-report.xml
+            -r html `
+            --reporter-html-export postman-tests/Testing-report.html
 
       - name: Upload Newman Report
         uses: actions/upload-artifact@v4
