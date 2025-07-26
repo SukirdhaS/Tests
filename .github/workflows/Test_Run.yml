@@ -33,6 +33,21 @@ jobs:
           newman run Shop_API_Testing.postman_collection.json `
             -e QA.postman_environment.json `
             -r html `
-            --reporter-html newman1/report.html
-     
+            --reporter-html-export postman-tests/newman1/report.html
+    
+          # After the "Run Newman Collection" step
+
+      - name: Verify report generation
+        run: |
+          Get-ChildItem -Recurse postman-tests # For Windows runner
+
+# After the "Run Newman Collection" step
+
+      - name: Upload Newman Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: Newman_API_Report
+          path: postman-tests/newman1/report.html
+
+        
         
