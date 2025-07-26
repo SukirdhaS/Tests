@@ -27,8 +27,8 @@ jobs:
 
       - name: Run Newman Collection
         run: |
-          newman run Tests/Shop_API_Testing.postman_collection.json `
-            -e Tests/QA.postman_environment.json `
+          newman run Shop_API_Testing.postman_collection.json `
+            -e QA.postman_environment.json `
             -r cli,junit `
             --reporter-junit-export postman-tests/Testing-report.xml
 
