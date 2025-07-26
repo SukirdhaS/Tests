@@ -19,12 +19,6 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Create report folder
-        run: |
-          if (-Not (Test-Path "postman-tests")) {
-            New-Item -ItemType Directory -Path "postman-tests"
-          }
-
       - name: Install newman HTML reporting
         run: npm install -g newman-reporter-htmlextra
       
@@ -33,7 +27,7 @@ jobs:
           newman run Shop_API_Testing.postman_collection.json `
             -e QA.postman_environment.json `
             -r html `
-            --reporter-html-export postman-tests/newman1/report.htmlextra
+            --reporter-html-export newman/report260701.htmlextra
     
           # After the "Run Newman Collection" step
 
@@ -47,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Newman_API_Report
-          path: postman-tests/newman1/report.htmlextra
+          path: newman/report260701.htmlextra
 
         
         
