@@ -33,10 +33,6 @@ jobs:
           newman run Shop_API_Testing.postman_collection.json `
             -e QA.postman_environment.json `
             -r html `
-            --reporter-html-export postman-tests/Testing-report.html
+            --reporter-html newman1/report.html
 
-      - name: Upload Newman Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: postman-report
-          path: postman-tests/Testing-report.xml
+    
