@@ -34,5 +34,5 @@ jobs:
             -e QA.postman_environment.json `
             -r html `
             --reporter-html newman1/report.html
-
-    
+     
+        
