@@ -26,7 +26,7 @@ jobs:
         run: |
           newman run Shop_API_Testing.postman_collection.json `
             -e QA.postman_environment.json `
-            -r html `
+            -r htmlextra `
             --reporter-html-export newman1/Test_Results.htmlextra
     
           # After the "Run Newman Collection" step
